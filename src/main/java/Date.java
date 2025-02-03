@@ -312,6 +312,7 @@ public class Date {
         int startingDay = ((year + ((year-1) / 4) - ((year-1) / 100) + ((year-1) / 400)) % 7);
         int monthNumber = getMonthNumber(month);
         int monthDays = 0;
+
         int theTotalDays = 0;
         int leapDays = 0;
         System.out.println(month);
