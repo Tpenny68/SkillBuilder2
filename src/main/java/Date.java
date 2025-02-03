@@ -26,23 +26,23 @@ public class Date {
      * @return the name of the day given by dayValue
      */
     public static String getNameOfDay(int dayValue){
-        if (dayValue == 0)
-        {
-            return "Sunday";
-        } else if (dayValue == 1) {
-            return "Monday";
-        } else if (dayValue == 2) {
-            return "Tuesday";
-        } else if (dayValue == 3) {
-            return "Wednesday";
-        } else if (dayValue == 4) {
-            return "Thursday";
-        } else if (dayValue == 5) {
-            return "Friday";
-        } else if (dayValue == 6) {
-            return "Saturday";
-        } else {
-            return null;
+        switch (dayValue){
+            case 0:
+                return "Sunday";
+                case 1:
+                    return "Monday";
+                    case 2:
+                        return "Tuesday";
+                        case 3:
+                            return "Wednesday";
+                            case 4:
+                                return "Thursday";
+                                case 5:
+                                    return "Friday";
+                                    case 6:
+                                        return "Saturday";
+                                        default:
+                                            return null;
         }
     }
 
@@ -56,29 +56,29 @@ public class Date {
      * @return the numeric value of the month.
      */
     public static int getMonthNumber(String name){
-        if (name == "January"){
+        if (name.equalsIgnoreCase("January")){
             return 1;
-        } else if (name == "February"){
+        } else if (name.equalsIgnoreCase("February")){
             return 2;
-        } else if (name == "March"){
+        } else if (name.equalsIgnoreCase("March")){
             return 3;
-        } else if (name == "April") {
+        } else if (name.equalsIgnoreCase("April")){
             return 4;
-        } else if (name == "May"){
+        } else if (name.equalsIgnoreCase("May")){
             return 5;
-        } else if (name == "June"){
+        } else if (name.equalsIgnoreCase("June")){
             return 6;
-        } else if (name == "July"){
+        } else if (name.equalsIgnoreCase("July")){
             return 7;
-        } else if (name == "August"){
+        } else if (name.equalsIgnoreCase("August")){
             return 8;
-        } else if (name == "September"){
+        } else if (name.equalsIgnoreCase("September")){
             return 9;
-        } else if (name == "October"){
+        } else if (name.equalsIgnoreCase("October")){
             return 10;
-        } else if (name == "November"){
+        } else if (name.equalsIgnoreCase("November")){
             return 11;
-        } else if (name == "December"){
+        } else if (name.equalsIgnoreCase("December")){
             return 12;
         } else {
             return -1;
@@ -95,34 +95,34 @@ public class Date {
      * @return the name of the month given the numeric value provided by month
      */
     public static String getMonthName(int month){
-        if (month == 1){
-            return "January";
-        } else if (month == 2){
-            return "February";
-        } else if (month == 3){
-            return "March";
-        } else if (month == 4){
-            return "April";
-        } else if (month == 5){
-            return "May";
-        } else if (month == 6){
-            return "June";
-        } else if (month == 7){
-            return "July";
-        } else if (month == 8){
-            return "August";
-        } else if (month == 9){
-            return "September";
-        } else if (month == 10){
-            return "October";
-        } else if (month == 11){
-            return "November";
-        } else if (month == 12){
-            return "December";
-        } else {
-            return null;
+        switch (month){
+            case 1:
+                return "January";
+                case 2:
+                    return "February";
+                    case 3:
+                        return "March";
+                        case 4:
+                            return "April";
+                            case 5:
+                                return "May";
+                                case 6:
+                                    return "June";
+                                    case 7:
+                                        return "July";
+                                        case 8:
+                                            return "August";
+                                            case 9:
+                                                return "September";
+                                                case 10:
+                                                    return "October";
+                                                    case 11:
+                                                        return "November";
+                                                        case 12:
+                                                            return "December";
+                                                            default:
+                                                                return null;
         }
-
     }
 
     /**
@@ -342,6 +342,7 @@ public class Date {
      */
     public static int dayOfWeek(String month, int dayOfMonth, int year){
         System.out.println(month);
+        int monthNumber = getMonthNumber(month);
         int monthInt = 0;
         if (month == "January"){
             monthInt = 1;
