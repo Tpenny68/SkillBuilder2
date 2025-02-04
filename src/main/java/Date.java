@@ -309,7 +309,7 @@ public class Date {
      * @return the day of the week that the date falls on
      */
     public static int dayOfWeek(String month, int dayOfMonth, int year){
-        int startingDay = ((year + ((year-1) / 4) - ((year-1) / 100) + ((year-1) / 400)) % 7);
+        /***int startingDay = ((year + ((year-1) / 4) - ((year-1) / 100) + ((year-1) / 400)) % 7);
         int monthNumber = getMonthNumber(month);
         int monthDays = 0;
 
@@ -374,6 +374,9 @@ public class Date {
                 return (startingDay + theTotalDays -1) % 7;
             default:
                 return -1;
-        }
+        }*/
+        int monthNumber = getMonthNumber(month);
+        if (monthNumber == -1) return -1; // Invalid month name
+        return dayOfWeek(monthNumber, dayOfMonth, year);
     }
 }
